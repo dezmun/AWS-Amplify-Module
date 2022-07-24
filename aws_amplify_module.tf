@@ -1,12 +1,10 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
-    }
-  }
+resource "aws_amplify_app" "this" {
+  name = "var.appName"
+  repository = "var.repoLink"
+
+  //If you create a new Amplify App with the repository argument, you also need to set oauth_token or access_token for authentication.
+  access_token = ""
 }
-# Configure the AWS Provider
-provider "aws" {
-  region = "us-west-2"
-}
+
+//REGISTRY LINK
+//https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/amplify_app
